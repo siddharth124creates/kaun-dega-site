@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Group join karo · Kaun Dega?</title>
+<meta name="description" content="Tujhe Kaun Dega? group mein bulaya gaya hai. App kholo ya download karo.">
+<meta property="og:title" content="Kaun Dega? group invite">
+<meta property="og:description" content="Dosto ke saath hisaab, bina drama. Tap karke group join karo.">
+<meta name="theme-color" content="#F3EADB">
+<link rel="icon" href="../mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{--paper:#F3EADB;--sheet:#FAF4EA;--ink:#141117;--dim:#6F675D;--line:#DDD2C1;--haldi:#FFC629}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Poppins",ui-sans-serif,system-ui,sans-serif;line-height:1.5}
+main{max-width:460px;margin:0 auto;padding:40px 16px 56px;display:flex;flex-direction:column;gap:18px}
+.mk{width:56px;height:56px;color:var(--ink)}
+h1{font-size:30px;line-height:1.15;margin:0;font-weight:800;letter-spacing:-.01em}
+p{margin:0;color:var(--dim)}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border-radius:14px;font:600 16px/1 inherit;font-family:inherit;text-decoration:none;border:2px solid var(--ink);padding:0 18px}
+.primary{background:var(--ink);color:var(--paper)}
+.ghost{background:transparent;color:var(--ink)}
+.code{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:26px;letter-spacing:.12em;background:var(--sheet);border:1.5px dashed var(--ink);border-radius:12px;padding:12px;text-align:center;color:var(--ink);user-select:all}
+ol{margin:0;padding-left:20px;color:var(--dim)}
+li+li{margin-top:6px}
+.small{font-size:13px}
+a{color:var(--ink)}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<main>
+  <svg class="mk" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" xmlns:c2pa="http://c2pa.org/manifest"><g transform="scale(1.28160) translate(105.00 0)"><path fill="#ffc629" d="M567 250.0Q567 341.0 506.5 394.0Q446 447.0 347 449.0L342 522.0H169L163 323.0H235Q303 323.0 339.0 307.5Q375 292.0 375 252.0Q375 225.0 360.5 209.5Q346 194.0 321 194.0Q293 194.0 278.5 210.5Q264 227.0 264 255.0H79Q77 194.0 104.5 143.5Q132 93.0 188.0 63.5Q244 34.0 326 34.0Q435 34.0 501.0 90.0Q567 146.0 567 250.0Z"/><path fill="currentColor" d="M511 216.0Q511 307.0 450.5 360.0Q390 413.0 291 415.0L286 488.0H113L107 289.0H179Q247 289.0 283.0 273.5Q319 258.0 319 218.0Q319 191.0 304.5 175.5Q290 160.0 265 160.0Q237 160.0 222.5 176.5Q208 193.0 208 221.0H23Q21 160.0 48.5 109.5Q76 59.0 132.0 29.5Q188 0.0 270 0.0Q379 0.0 445.0 56.0Q511 112.0 511 216.0Z"/><circle cx="200.5" cy="663.5" r="112" fill="#ffc629" stroke="currentColor" stroke-width="30"/><circle cx="200.5" cy="663.5" r="58.24" fill="none" stroke="currentColor" stroke-width="14" opacity=".9"/></g></svg>
+  <h1>Tujhe group mein bulaya hai</h1>
+  <p>Kaun Dega? pe dost ke saath kharche baanto aur UPI se settle karo. Free hai.</p>
+
+  <div id="has-code" class="hidden" style="display:flex;flex-direction:column;gap:18px">
+    <a class="btn primary" id="open" href="#">App mein kholo</a>
+    <a class="btn ghost" href="https://github.com/siddharth124creates/kaun-dega-site/releases/latest/download/kaun-dega.apk">App nahi hai? Download karo</a>
+    <div>
+      <p class="small" style="margin-bottom:8px">Install ke baad yeh link phir se kholo. Ya app mein <b>Naya group</b> ke neeche yeh code daalo:</p>
+      <div class="code" id="code"></div>
+    </div>
+    <ol class="small">
+      <li>Download karo, phir file kholo aur Install dabao. Mushkil ho toh <a href="https://siddharth124creates.github.io/kaun-dega-site/#install">install help</a> dekho.</li>
+      <li>Google se login karo.</li>
+      <li>Is link pe wapas aao aur <b>App mein kholo</b> dabao. Apna naam chuno aur join.</li>
+    </ol>
+  </div>
+
+  <div id="no-code" class="hidden" style="display:flex;flex-direction:column;gap:18px">
+    <p>Is link mein group ka code nahi mila. Jisne bheja usse poora link dobara maango.</p>
+    <a class="btn ghost" href="https://siddharth124creates.github.io/kaun-dega-site/">Kaun Dega? ke baare mein</a>
+  </div>
+</main>
+<script>
+const code = (new URLSearchParams(location.search).get('c') || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+if (/^[a-z2-9]{8}$/.test(code)) {
+  document.getElementById('has-code').classList.remove('hidden');
+  document.getElementById('code').textContent = code;
+  const isAndroid = /android/i.test(navigator.userAgent);
+  // Chrome on Android opens the app if it's installed, else falls back to the download.
+  document.getElementById('open').href = isAndroid
+    ? `intent://join/${code}#Intent;scheme=kaundega;package=app.kaundega;S.browser_fallback_url=${encodeURIComponent('https://github.com/siddharth124creates/kaun-dega-site/releases/latest/download/kaun-dega.apk')};end`
+    : `kaundega://join/${code}`;
+} else {
+  document.getElementById('no-code').classList.remove('hidden');
+}
+</script>
+</body>
+</html>

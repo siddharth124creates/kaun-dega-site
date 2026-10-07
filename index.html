@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Hostel, flat aur trip ka hisaab. Kharcha daalo, UPI se settle karo. Free.">
+<meta property="og:title" content="Kaun Dega?">
+<meta property="og:description" content="Hostel, flat aur trip ka hisaab. Kharcha daalo, UPI se settle karo. Free.">
+<meta property="og:url" content="">
+<meta name="theme-color" content="#F3EADB">
+<link rel="icon" href="mark.svg" type="image/svg+xml">
+<title>Kaun Dega? Hisaab rakho, dosti bachao</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one narrow paper column; hero splits copy | phone at desktop, stacks on phones. Flat lists, ink lines, play only on the PAID stamp. */
+:root{
+  --paper:#F3EADB; --sheet:#FAF4EA; --ink:#141117; --dim:#6F675D; --line:#DDD2C1;
+  --haldi:#FFC629; --owe:#E0306F; --owed:#1E7F55;
+  --btn:#141117; --btn-ink:#F3EADB; --grain:.07;
+  --display:"Poppins",ui-sans-serif,system-ui,sans-serif;
+  --body:"Poppins",ui-sans-serif,system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#141117; --sheet:#1C181E; --ink:#F3EADB; --dim:#A59C90; --line:#332D35;
+  --owe:#FF5C93; --owed:#4CC38A; --btn:#F3EADB; --btn-ink:#141117; --grain:.05; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#141117; --sheet:#1C181E; --ink:#F3EADB; --dim:#A59C90; --line:#332D35;
+  --owe:#FF5C93; --owed:#4CC38A; --btn:#F3EADB; --btn-ink:#141117; --grain:.05; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:20px;position:relative;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:var(--grain);z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:1040px;margin:0 auto;position:relative;z-index:1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--haldi);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0}
+.dim{color:var(--dim)}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+
+/* header */
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px;border-bottom:1px solid var(--line)}
+.wm{height:30px;width:auto;display:block;color:var(--ink)}
+nav.links{display:flex;gap:22px;font-size:14px;font-weight:500}
+nav.links a{text-decoration:none;color:var(--dim)}
+nav.links a:hover{color:var(--ink)}
+@media (max-width:640px){nav.links{display:none}}
+.pill{font-size:12px;font-weight:600;border:1.5px solid var(--ink);border-radius:999px;padding:3px 10px;white-space:nowrap}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:56px 40px}
+@media (max-width:820px){.hero{grid-template-columns:1fr;gap:40px;padding-block:36px 24px}}
+.hero h1{font-size:clamp(40px,6.4vw,68px);font-weight:800;letter-spacing:-.025em}
+.hero h1 .q{position:relative;display:inline-block}
+.hero h1 .q::before{content:"?";position:absolute;left:.06em;top:.05em;color:var(--haldi);z-index:-1}
+.hero .lede{font-size:18px;margin-top:20px;max-width:34ch;color:var(--dim)}
+.hero .lede b{color:var(--ink);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:30px}
+.btn{font:inherit;font-weight:600;font-size:16px;border:0;cursor:pointer;border-radius:14px;padding:16px 22px;display:inline-flex;align-items:center;gap:10px;text-decoration:none;transition:transform .15s ease}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--btn);color:var(--btn-ink)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn svg{width:20px;height:20px}
+.meta{font-family:var(--mono);font-size:12.5px;color:var(--dim);margin-top:14px;font-variant-numeric:tabular-nums}
+
+/* phone mock */
+.phone{justify-self:center;width:min(300px,100%);aspect-ratio:9/18.5;max-width:100%;background:var(--sheet);border:1.5px solid var(--ink);border-radius:38px;padding:14px;position:relative;box-shadow:10px 12px 0 var(--line)}
+.screen{height:100%;border-radius:26px;background:var(--paper);overflow:hidden;display:flex;flex-direction:column;padding:18px 16px;gap:14px;font-size:13px}
+.sbar{display:flex;justify-content:space-between;font-size:11px;font-weight:600;font-variant-numeric:tabular-nums}
+.hello{font-weight:700;font-size:18px}
+.bal{border-block:1px solid var(--line);padding-block:14px}
+.bal .amt{font-size:30px;font-weight:800;letter-spacing:-.02em;color:var(--owed);font-variant-numeric:tabular-nums}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-block:9px;border-bottom:1px solid var(--line)}
+.row .n{font-weight:600}
+.row .s{font-size:11px;color:var(--dim)}
+.row .v{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.row .v.owe{color:var(--owe)} .row .v.owed{color:var(--owed)}
+.stamp{position:absolute;right:-14px;bottom:86px;transform:rotate(-12deg);border:3px solid var(--owe);color:var(--owe);font-weight:800;font-size:24px;letter-spacing:.08em;padding:2px 12px;border-radius:8px;background:color-mix(in srgb,var(--paper) 80%,transparent);animation:thunk .6s cubic-bezier(.2,1.6,.4,1) .5s both}
+@keyframes thunk{from{transform:rotate(-12deg) scale(1.8);opacity:0}to{transform:rotate(-12deg) scale(1);opacity:1}}
+.fab{margin-top:auto;align-self:stretch;text-align:center;background:var(--btn);color:var(--btn-ink);border-radius:12px;padding:11px;font-weight:600}
+
+/* promise strip */
+section{padding-block:56px;border-top:1px solid var(--line)}
+section h2{font-size:clamp(26px,3.6vw,36px);font-weight:700;letter-spacing:-.015em}
+.sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:32px;max-width:60ch}
+.promise{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media (max-width:760px){.promise{grid-template-columns:1fr}}
+.promise h3{font-size:20px;font-weight:700;margin-bottom:6px}
+.promise p{color:var(--dim);font-size:15px}
+.promise .tick{width:30px;height:30px;border-radius:50%;background:var(--haldi);color:#141117;display:grid;place-items:center;margin-bottom:14px;font-weight:800}
+
+/* how it works */
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
+@media (max-width:760px){.flow{grid-template-columns:1fr}}
+.flow li{list-style:none;counter-increment:s;min-width:0}
+.flow li::before{content:counter(s);font-family:var(--mono);font-size:13px;font-weight:500;display:inline-block;border:1.5px solid var(--ink);border-radius:999px;width:28px;height:28px;text-align:center;line-height:25px;margin-bottom:12px}
+.flow h3{font-size:18px;font-weight:700;margin-bottom:4px}
+.flow p{color:var(--dim);font-size:15px}
+.flow ul,.flow{padding:0;margin:0}
+
+/* install guide */
+.install{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:start}
+@media (max-width:820px){.install{grid-template-columns:1fr;gap:24px}}
+.steps{display:flex;flex-direction:column;gap:4px;padding:0;margin:0}
+.steps button{all:unset;cursor:pointer;display:flex;gap:12px;align-items:baseline;padding:12px 14px;border-radius:12px;font-weight:500;color:var(--dim)}
+.steps button .k{font-family:var(--mono);font-size:12px}
+.steps button[aria-selected="true"]{background:var(--sheet);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.steps button:focus-visible{outline:3px solid var(--haldi)}
+.stage{display:grid;grid-template-columns:240px 1fr;gap:32px;align-items:center;min-width:0}
+@media (max-width:560px){.stage{grid-template-columns:1fr}}
+.mini{width:240px;max-width:100%;aspect-ratio:9/15;background:var(--sheet);border:1.5px solid var(--ink);border-radius:28px;padding:10px;justify-self:center}
+.mini .scr{height:100%;border-radius:20px;background:color-mix(in srgb,var(--ink) 14%,var(--paper));display:flex;align-items:flex-end;padding:10px;position:relative;overflow:hidden}
+.dlg{background:var(--sheet);border-radius:16px;padding:16px;width:100%;font-size:12.5px;line-height:1.45;box-shadow:0 6px 20px rgba(0,0,0,.18);display:flex;flex-direction:column;gap:10px;animation:rise .35s ease both}
+@keyframes rise{from{transform:translateY(14px);opacity:.3}to{transform:none;opacity:1}}
+.dlg .t{font-weight:700;font-size:14px}
+.dlg .acts{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:8px 12px;font-weight:600;font-size:12.5px}
+.dlg .acts span{white-space:nowrap}
+.dlg .acts .go{background:var(--haldi);color:#141117;border-radius:999px;padding:3px 10px}
+.dlg .tg{display:flex;justify-content:space-between;align-items:center}
+.sw{width:34px;height:20px;border-radius:999px;background:var(--owed);position:relative}
+.sw::after{content:"";position:absolute;right:3px;top:3px;width:14px;height:14px;border-radius:50%;background:#fff}
+.copy h3{font-size:22px;font-weight:700;margin-bottom:8px}
+.copy p{color:var(--dim);max-width:46ch}
+.copy .hint{margin-top:14px;font-size:14px;border-left:3px solid var(--haldi);padding-left:12px;color:var(--ink)}
+.nav2{display:flex;gap:10px;margin-top:22px}
+.nav2 .btn{padding:10px 16px;font-size:14px;border-radius:10px}
+
+/* safety */
+.safe{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media (max-width:760px){.safe{grid-template-columns:1fr}}
+.safe h3{font-size:18px;font-weight:700;margin-bottom:10px}
+.perm{list-style:none;padding:0;margin:0}
+.perm li{display:flex;justify-content:space-between;gap:12px;padding-block:10px;border-bottom:1px solid var(--line);font-size:15px}
+.perm li span:last-child{color:var(--dim);text-align:right}
+.hash{font-family:var(--mono);font-size:12.5px;background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:14px;overflow-wrap:anywhere;margin-top:10px}
+.copybtn{margin-top:10px;font:inherit;font-size:13px;font-weight:600;background:none;border:1.5px solid var(--line);color:var(--ink);border-radius:10px;padding:7px 12px;cursor:pointer}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding-block:16px}
+summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-weight:400;font-size:22px;line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--dim);margin-top:10px;max-width:62ch}
+
+/* footer */
+footer{border-top:1px solid var(--ink);padding-block:36px 48px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-end}
+footer .mk{width:44px;height:44px;color:var(--ink)}
+footer .fine{font-size:13px;color:var(--dim);max-width:52ch}
+.ph{border:1.5px dashed var(--dim);border-radius:6px;padding:0 6px;font-family:var(--mono);font-size:12px}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140%);background:var(--btn);color:var(--btn-ink);padding:12px 18px;border-radius:12px;font-size:14px;font-weight:500;max-width:calc(100% - 32px);transition:transform .3s ease,visibility .3s;z-index:5;visibility:hidden}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+.proto{font-size:12px;text-align:center;color:var(--dim);padding-block:10px;border-bottom:1px dashed var(--line)}
+</style>
+
+<style>
+/* fun pass: excuse ticker, stickers, excuse generator */
+.ticker{margin-top:22px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:15px}
+.ticker .lbl{font-weight:600}
+.excuse{position:relative;display:inline-block;font-weight:500;color:var(--dim);min-height:1.6em}
+.excuse.cut::after{content:"";position:absolute;left:-2px;right:-2px;top:52%;height:3px;background:var(--owe);transform-origin:left;animation:cut .35s ease .9s both;border-radius:2px}
+@keyframes cut{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.nahi{font-weight:800;color:var(--owe);transform:rotate(-4deg);display:inline-block;opacity:0;animation:pop .3s cubic-bezier(.2,1.6,.4,1) 1.3s both}
+@keyframes pop{from{opacity:0;transform:rotate(-4deg) scale(.5)}to{opacity:1;transform:rotate(-4deg) scale(1)}}
+.sticker{position:absolute;font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px;border:1.5px solid #141117;background:var(--haldi);color:#141117;white-space:nowrap;box-shadow:3px 3px 0 #141117}
+.sticker.s1{top:-16px;left:-30px;transform:rotate(-9deg)}
+.sticker.s2{top:200px;right:-30px;transform:rotate(7deg);background:#fff;}
+@media (max-width:820px){.sticker.s1{left:-6px}.sticker.s2{right:-6px}}
+.phone{overflow:visible}
+.gen{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background:var(--sheet);border:1.5px solid var(--ink);border-radius:20px;padding:24px;box-shadow:8px 8px 0 var(--haldi)}
+@media (max-width:640px){.gen{grid-template-columns:1fr}}
+.gen .quote{font-size:clamp(20px,2.8vw,28px);font-weight:700;line-height:1.25;min-height:2.5em}
+.gen .who{font-size:14px;color:var(--dim);margin-top:6px}
+.gen .reply{margin-top:12px;font-size:14px;border-left:3px solid var(--owe);padding-left:10px}
+.marquee{overflow:hidden;border-block:1.5px solid var(--ink);padding-block:10px;margin-block:8px 0;white-space:nowrap}
+.marquee div{display:inline-block;animation:slide 28s linear infinite;font-weight:700;font-size:15px;letter-spacing:.02em}
+.marquee span{margin-inline:14px}
+.marquee .dot{color:var(--haldi)}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* features */
+.feats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.feat.wide{grid-column:span 2}
+@media (max-width:980px){.feats{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.feats{grid-template-columns:1fr}.feat.wide{grid-column:auto}}
+.feat{background:var(--sheet);border:1.5px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:6px;min-width:0;transition:transform .2s ease,border-color .2s ease}
+.feat:hover{transform:translateY(-3px) rotate(-.4deg);border-color:var(--ink)}
+.feat h3{font-size:17px;font-weight:700}
+.feat p{font-size:14px;color:var(--dim)}
+.feat .demo{margin-top:auto;padding-top:10px;font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--ink);display:flex;flex-wrap:wrap;gap:6px}
+.feat .demo span{border:1px dashed var(--dim);border-radius:8px;padding:2px 8px}
+.feat.hot{background:var(--haldi);border-color:#141117;color:#141117;box-shadow:5px 5px 0 #141117}
+.feat.hot p,.feat.hot .demo{color:#141117}
+.feat.hot .demo span{border-color:#141117}
+.feats-end{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:24px}
+</style>
+
+<div class="wrap">
+
+  <header class="top">
+    <a href="#top" aria-label="Kaun Dega? home"><svg class="wm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6294 1127" role="img" aria-label="Kaun Dega?" xmlns:c2pa="http://c2pa.org/manifest"><path fill="currentColor" d="M533 817 312 508V817H116V112H312V416L531 112H757L498 454L770 817Z"/><path fill="currentColor" d="M1039 249Q1097 249 1139.0 272.0Q1181 295 1204 334V256H1400V817H1204V739Q1181 778 1138.5 801.0Q1096 824 1039 824Q972 824 917.5 789.0Q863 754 831.5 688.5Q800 623 800 536Q800 449 831.5 384.0Q863 319 917.5 284.0Q972 249 1039 249ZM1102 420Q1058 420 1029.0 450.5Q1000 481 1000 536Q1000 590 1029.0 621.5Q1058 653 1102 653Q1145 653 1174.5 622.0Q1204 591 1204 536Q1204 482 1174.5 451.0Q1145 420 1102 420Z"/><path fill="currentColor" d="M2076 256V817H1879V737Q1854 775 1810.0 798.5Q1766 822 1709 822Q1611 822 1554.5 757.5Q1498 693 1498 582V256H1693V557Q1693 605 1718.5 632.5Q1744 660 1786 660Q1829 660 1854.0 632.5Q1879 605 1879 557V256Z"/><path fill="currentColor" d="M2756 490V817H2560V516Q2560 468 2535.0 440.5Q2510 413 2468 413Q2424 413 2399.0 440.5Q2374 468 2374 516V817H2178V256H2374V336Q2400 298 2444.0 274.5Q2488 251 2545 251Q2642 251 2699.0 315.5Q2756 380 2756 490Z"/><path fill="currentColor" d="M3682 464Q3682 566 3636.5 646.0Q3591 726 3507.5 771.5Q3424 817 3314 817H3035V112H3314Q3425 112 3508.5 156.5Q3592 201 3637.0 281.0Q3682 361 3682 464ZM3483 464Q3483 377 3434.0 329.5Q3385 282 3299 282H3231V644H3299Q3385 644 3434.0 597.0Q3483 550 3483 464Z"/><path fill="currentColor" d="M4293 576H3922Q3925 622 3947.5 644.5Q3970 667 4005 667Q4054 667 4075 623H4284Q4271 681 4233.5 726.5Q4196 772 4139.0 798.0Q4082 824 4013 824Q3930 824 3865.5 789.0Q3801 754 3764.5 689.0Q3728 624 3728 536Q3728 448 3764.0 383.5Q3800 319 3864.5 284.0Q3929 249 4013 249Q4096 249 4160.0 283.0Q4224 317 4260.0 380.5Q4296 444 4296 530Q4296 553 4293 576ZM4096 481Q4096 445 4072.0 424.5Q4048 404 4012 404Q3976 404 3953.0 423.5Q3930 443 3923 481Z"/><path fill="currentColor" d="M4738 334V256H4934V811Q4934 890 4904.0 953.5Q4874 1017 4810.5 1055.0Q4747 1093 4650 1093Q4520 1093 4442.0 1032.0Q4364 971 4353 866H4546Q4552 893 4576.0 908.0Q4600 923 4638 923Q4738 923 4738 811V739Q4715 778 4672.5 801.0Q4630 824 4573 824Q4506 824 4451.5 789.0Q4397 754 4365.5 688.5Q4334 623 4334 536Q4334 449 4365.5 384.0Q4397 319 4451.5 284.0Q4506 249 4573 249Q4630 249 4672.5 272.0Q4715 295 4738 334ZM4636 420Q4592 420 4563.0 450.5Q4534 481 4534 536Q4534 590 4563.0 621.5Q4592 653 4636 653Q4679 653 4708.5 622.0Q4738 591 4738 536Q4738 482 4708.5 451.0Q4679 420 4636 420Z"/><path fill="currentColor" d="M5243 249Q5301 249 5343.0 272.0Q5385 295 5408 334V256H5604V817H5408V739Q5385 778 5342.5 801.0Q5300 824 5243 824Q5176 824 5121.5 789.0Q5067 754 5035.5 688.5Q5004 623 5004 536Q5004 449 5035.5 384.0Q5067 319 5121.5 284.0Q5176 249 5243 249ZM5306 420Q5262 420 5233.0 450.5Q5204 481 5204 536Q5204 590 5233.0 621.5Q5262 653 5306 653Q5349 653 5378.5 622.0Q5408 591 5408 536Q5408 482 5378.5 451.0Q5349 420 5306 420Z"/><path fill="#ffc629" d="M6217 310Q6217 401 6156.5 454.0Q6096 507 5997 509L5992 582H5819L5813 383H5885Q5953 383 5989.0 367.5Q6025 352 6025 312Q6025 285 6010.5 269.5Q5996 254 5971 254Q5943 254 5928.5 270.5Q5914 287 5914 315H5729Q5727 254 5754.5 203.5Q5782 153 5838.0 123.5Q5894 94 5976 94Q6085 94 6151.0 150.0Q6217 206 6217 310Z"/><path fill="currentColor" d="M6161 276Q6161 367 6100.5 420.0Q6040 473 5941 475L5936 548H5763L5757 349H5829Q5897 349 5933.0 333.5Q5969 318 5969 278Q5969 251 5954.5 235.5Q5940 220 5915 220Q5887 220 5872.5 236.5Q5858 253 5858 281H5673Q5671 220 5698.5 169.5Q5726 119 5782.0 89.5Q5838 60 5920 60Q6029 60 6095.0 116.0Q6161 172 6161 276Z"/><circle cx="5850.5" cy="723.5" r="112" fill="#ffc629" stroke="currentColor" stroke-width="30"/><circle cx="5850.5" cy="723.5" r="58.24" fill="none" stroke="currentColor" stroke-width="14" opacity=".9"/></svg></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#how">Kaise chalta hai</a>
+      <a href="#features">Features</a>
+      <a href="#install">Install help</a>
+      <a href="#safety">Safe hai?</a>
+      <a href="#faq">Sawaal</a>
+    </nav>
+    <span class="pill">Android beta</span>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Hostel, flat aur trip ka hisaab</p>
+        <h1 style="margin-top:14px">Kaun dega<span class="q">?</span><br>Tu toh nahi. Splitting free hai, boss.</h1>
+        <p class="lede">Kharcha daalo, maths Kaun Dega karega, aur sab <b>ek tap mein UPI</b> se settle. Groups ya kharchon ki koi limit nahi. Kabhi bhi.</p>
+        <div class="ticker" aria-live="polite">
+          <span class="lbl">Bahana:</span>
+          <span class="excuse cut" id="excuse">"Kal pakka de dunga"</span>
+          <span class="nahi" id="nahi">Ab nahi chalega.</span>
+        </div>
+        <div class="cta">
+          <a class="btn primary" data-dl href="https://github.com/siddharth124creates/kaun-dega-site/releases/latest/download/kaun-dega.apk">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
+            Android pe download karo
+          </a>
+          <a class="btn ghost" href="#install">Install kaise karein?</a>
+          <a class="btn ghost" href="https://claude.ai/artifact/KiC5yqXYR93ATwsCGpn7Jr" target="_blank" rel="noopener">App try karo ↗</a>
+        </div>
+        <p class="meta" id="meta">Android 8+ · iPhone wale thoda ruko</p>
+      </div>
+
+      <div class="phone" aria-label="Kaun Dega home screen preview">
+        <div class="screen">
+          <div class="sbar"><span>9:41</span><span>5G ▮▮▮</span></div>
+          <div class="hello">Kya scene, Aarav?</div>
+          <div class="bal">
+            <div class="dim" style="font-size:12px">Total, tujhe milne hain</div>
+            <div class="amt">₹1,240</div>
+          </div>
+          <div>
+            <div class="row"><div><div class="n">Flat 302</div><div class="s">Rent, wifi, maid didi</div></div><div class="v owed">+ ₹1,860</div></div>
+            <div class="row"><div><div class="n">Goa trip</div><div class="s">Kabir ko dene hain</div></div><div class="v owe">− ₹620</div></div>
+            <div class="row"><div><div class="n">Tapri gang</div><div class="s">Sab chukta, mast</div></div><div class="v">₹0</div></div>
+          </div>
+          <div class="fab">+ Kharcha daalo</div>
+        </div>
+        <div class="sticker s1" aria-hidden="true">No udhaari drama</div>
+        <div class="sticker s2" aria-hidden="true">₹0 forever</div>
+        <div class="stamp" aria-hidden="true">PAID</div>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true"><div id="mq"></div></div>
+
+    <section aria-labelledby="free-h">
+      <div class="sec-head">
+        <p class="eyebrow">Hamara vaada</p>
+        <h2 id="free-h">Free. Hamesha. Koi chakkar nahi.</h2>
+      </div>
+      <div class="promise">
+        <div><div class="tick">✓</div><h3>Koi limit nahi</h3><p>Jitne groups, dost aur kharche chahiye, banao. Splitting ke liye kabhi paisa nahi maangenge.</p></div>
+        <div><div class="tick">✓</div><h3>Kharchon mein ads nahi</h3><p>Tumhare groups, kharche aur settle-up ekdum clean. Hisaab ke beech mein koi ad nahi ghusega.</p></div>
+        <div><div class="tick">✓</div><h3>Data bechna? Bilkul nahi</h3><p>Tumne kahan kitna udaya, wo tumhara personal matter hai. Hum kisi ko nahi bechte.</p></div>
+      </div>
+    </section>
+
+    <section id="how" aria-labelledby="how-h">
+      <div class="sec-head">
+        <p class="eyebrow">Kaise chalta hai</p>
+        <h2 id="how-h">Teen steps. Zero awkward "bhai paise?" messages.</h2>
+      </div>
+      <ol class="flow">
+        <li><h3>Group banao</h3><p>Flatmates, trip gang ya canteen squad. Ek WhatsApp link bhejo, sab andar.</p></li>
+        <li><h3>Kharcha daalo</h3><p>Barabar baanto, exact amount, percent ya shares mein. Ek ek paisa ka hisaab milega.</p></li>
+        <li><h3>UPI se chukta karo</h3><p>Settle up dabao, UPI app amount ke saath khulega, aur kharche pe PAID ka thappa lag jaayega.</p></li>
+      </ol>
+    </section>
+
+
+    <section id="features" aria-labelledby="feat-h">
+      <div class="sec-head">
+        <p class="eyebrow">Aur kya milta hai</p>
+        <h2 id="feat-h">Sirf hisaab nahi, poora masala</h2>
+      </div>
+      <div class="feats">
+        <div class="feat"><h3>Google se login</h3><p>Na password, na OTP. Ek tap aur andar.</p><div class="demo"><span>G  Continue with Google</span></div></div>
+        <div class="feat"><h3>Ek saath sabko add karo</h3><p>Naam likho, +, agla naam. Poora flat ek baar mein.</p><div class="demo"><span>Rohan +</span><span>Neha +</span><span>Kabir +</span></div></div>
+        <div class="feat"><h3>Payment confirm</h3><p>Jab tak saamne wala "Mil gaya" na bole, hisaab nahi badlega.</p><div class="demo"><span>₹340 · Mil gaya?</span></div></div>
+        <div class="feat"><h3>Reminder ab notification</h3><p>Sweet, Seedha ya Savage. Din mein ek. App pe nahi hai toh WhatsApp.</p><div class="demo"><span>Sweet</span><span>Seedha</span><span>Savage</span></div></div>
+        <div class="feat"><h3>Trip live total</h3><p>Trip pe kitna uda, live dikhta rehta hai.</p><div class="demo"><span>Goa: ₹9,600 ab tak</span><span>₹1,920/head</span></div></div>
+        <div class="feat hot wide"><h3>Monthly wrap</h3><p>Kitna uda, kis pe uda, kaun late tha. Share karne layak.</p><div class="demo"><span>Oct wrap · 🍕 #1 Zomato</span></div></div>
+        <div class="feat"><h3>Reactions aur comments</h3><p>Har kharche pe react karo ya roast karo.</p><div class="demo"><span>😂</span><span>🔥</span><span>💀</span><span>"phir se pizza?"</span></div></div>
+        <div class="feat"><h3>Har mahine wala kharcha</h3><p>Rent, WiFi, maid didi. Apne aap add ho jaata hai.</p><div class="demo"><span>Rent · har 1 tareekh</span></div></div>
+        <div class="feat"><h3>Badges aur streak</h3><p>Pehla kharcha, Jaldi chukta, Debt free. Opt-in "Kanjoos of the month" bhi.</p><div class="demo"><span>🏅 Jaldi chukta</span><span>🔥 5 din</span></div></div>
+        <div class="feat wide"><h3>Smart tips</h3><p>Sahi time pe sahi nudge.</p><div class="demo"><span>"Mahine ka end, rent se pehle settle karo"</span></div></div>
+        </div>
+      <div class="feats-end">
+        <a class="btn primary" href="https://claude.ai/artifact/KiC5yqXYR93ATwsCGpn7Jr" target="_blank" rel="noopener">App ka demo try karo ↗</a>
+        <span class="dim" style="font-size:14px">Sample data hai, koi paisa nahi jaata.</span>
+      </div>
+    </section>
+    <section aria-labelledby="gen-h">
+      <div class="sec-head">
+        <p class="eyebrow">Bahana generator</p>
+        <h2 id="gen-h">Dost ka next bahana kya hoga?</h2>
+        <p class="dim">Tap karo aur dekho. Kaun Dega mein har bahane ka ek hi jawab hai.</p>
+      </div>
+      <div class="gen">
+        <div>
+          <div class="quote" id="gq">"Bhai UPI ka server down hai."</div>
+          <div class="who" id="gw">Rohan, 11:47 pm</div>
+          <div class="reply"><b>Kaun Dega:</b> <span id="gr">Server theek hai. Ye raha link, ₹340 bhej de.</span></div>
+        </div>
+        <button class="btn primary" type="button" id="genbtn">Naya bahana</button>
+      </div>
+    </section>
+
+    <section id="install" aria-labelledby="inst-h">
+      <div class="sec-head">
+        <p class="eyebrow">Install help</p>
+        <h2 id="inst-h">Play Store ke bina install, tension mat lo</h2>
+        <p class="dim">Abhi beta chal raha hai, toh app seedha isi site se aata hai. Android thode warnings dikhata hai, jo normal hai. Har screen pe kya dabana hai, yahan dekho.</p>
+      </div>
+      <div class="install">
+        <div class="steps" role="tablist" aria-label="Install steps" id="steps"></div>
+        <div class="stage" role="tabpanel" id="stage" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="safety" aria-labelledby="safe-h">
+      <div class="sec-head">
+        <p class="eyebrow">Safe hai?</p>
+        <h2 id="safe-h">App kya chhoo sakta hai, kya nahi</h2>
+      </div>
+      <div class="safe">
+        <div>
+          <h3>Permissions</h3>
+          <ul class="perm">
+            <li><span>Internet</span><span>Groups aur kharche sync karne ke liye</span></li>
+            <li><span>Notifications</span><span>Reminders, sirf agar tum allow karo</span></li>
+            <li><span>Tumhara paisa</span><span>Kabhi nahi. Payment tumhare apne UPI app mein hota hai</span></li>
+            <li><span>Contacts, SMS, photos</span><span>Maangte hi nahi</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>File asli hai ya nahi, check karo</h3>
+          <p class="dim" style="font-size:15px">Har release ka SHA-256 fingerprint yahan milega. Download ki hui file se match ho gaya, matlab kisi ne gadbad nahi ki.</p>
+          <div class="hash" id="hash">…</div>
+          <button class="copybtn" type="button" id="copyhash">Fingerprint copy karo</button>
+          <p class="dim" style="font-size:12px;margin-top:8px" id="hashnote">Pehla release aate hi yahan dikhega.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" aria-labelledby="faq-h">
+      <div class="sec-head">
+        <p class="eyebrow">Sawaal jawaab</p>
+        <h2 id="faq-h">Log yeh poochte hain</h2>
+      </div>
+      <details open><summary>Sach mein free hai?</summary><p>Haan bhai, sach mein. Kharcha splitting, groups, reminders aur UPI settle-up, sab free aur bina limit ke. Baad mein receipt scan jaise kuch extra features aa sakte hain, par jo aaj free hai wo free hi rahega.</p></details>
+      <details><summary>Play Store pe kyun nahi hai?</summary><p>Aayega, pakka. Beta mein hum app seedha share kar rahe hain taaki bugs jaldi fix ho sakein. Public launch pe yeh button Play Store pe le jaayega.</p></details>
+      <details><summary>Kaun Dega mera paisa rakhta hai?</summary><p>Nahi. Settle up karte hi tumhara apna UPI app (GPay, PhonePe, Paytm, koi bhi) khulta hai aur paisa seedha dost ko jaata hai. Hum sirf note karte hain ki kharcha chukta ho gaya.</p></details>
+      <details><summary>Update kaise milega?</summary><p>App khulte hi check karta hai. Naya version aaya toh "Naya version aaya hai" ke saath Download button dikhega. Tumhare groups aur kharche account mein safe rehte hain.</p></details>
+      <details><summary>iPhone app kab aayega?</summary><p>Abhi nahi. Pehle Android, public launch ke baad iPhone. Tab tak dost ke Android pe kaam chalao.</p></details>
+    </section>
+  </main>
+
+  <footer>
+    <div style="display:flex;gap:16px;align-items:center">
+      <svg class="mk" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" xmlns:c2pa="http://c2pa.org/manifest"><g transform="scale(1.28160) translate(105.00 0)"><path fill="#ffc629" d="M567 250.0Q567 341.0 506.5 394.0Q446 447.0 347 449.0L342 522.0H169L163 323.0H235Q303 323.0 339.0 307.5Q375 292.0 375 252.0Q375 225.0 360.5 209.5Q346 194.0 321 194.0Q293 194.0 278.5 210.5Q264 227.0 264 255.0H79Q77 194.0 104.5 143.5Q132 93.0 188.0 63.5Q244 34.0 326 34.0Q435 34.0 501.0 90.0Q567 146.0 567 250.0Z"/><path fill="currentColor" d="M511 216.0Q511 307.0 450.5 360.0Q390 413.0 291 415.0L286 488.0H113L107 289.0H179Q247 289.0 283.0 273.5Q319 258.0 319 218.0Q319 191.0 304.5 175.5Q290 160.0 265 160.0Q237 160.0 222.5 176.5Q208 193.0 208 221.0H23Q21 160.0 48.5 109.5Q76 59.0 132.0 29.5Q188 0.0 270 0.0Q379 0.0 445.0 56.0Q511 112.0 511 216.0Z"/><circle cx="200.5" cy="663.5" r="112" fill="#ffc629" stroke="currentColor" stroke-width="30"/><circle cx="200.5" cy="663.5" r="58.24" fill="none" stroke="currentColor" stroke-width="14" opacity=".9"/></g></svg>
+      <div>
+        <div style="font-weight:700">Kaun Dega?</div>
+        <div class="fine">Hostel, flat aur trip walon ke liye, poore India mein.</div>
+      </div>
+    </div>
+    <div class="fine">
+      <a href="privacy/">Privacy policy</a> · Contact jaldi aa raha hai<br>
+      Kisi bank ya UPI app se juda nahi hai.
+    </div>
+  </footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const steps=[
+  {k:"Download",t:"Android pe download karo dabao",p:"Chrome bolega file harmful ho sakti hai. Yeh har app file pe aata hai, darna mat. Download anyway dabao.",
+   d:`<div class="t">File might be harmful</div><div>Do you want to keep kaun-dega.apk anyway?</div><div class="acts"><span>Cancel</span><span class="go">Download anyway</span></div>`},
+  {k:"Allow",t:"Chrome ko install ki permission do",p:"Download hui file kholo. Android ek baar poochega ki Chrome apps install kar sakta hai kya. Allow from this source on karo, phir back aao.",
+   d:`<div class="t">Install unknown apps</div><div class="tg"><span>Allow from this source</span><span class="sw" aria-hidden="true"></span></div><div class="dim" style="font-size:11px">Chrome</div>`,
+   h:"Xiaomi aur Realme pe yeh screen thodi alag dikh sakti hai, par switch wahi hai."},
+  {k:"Install",t:"Install dabao",p:"Android app ka naam aur icon dikhayega. Check karo ki Kaun Dega? likha hai, phir Install dabao.",
+   d:`<div class="t">Kaun Dega?</div><div>Do you want to install this app?</div><div class="acts"><span>Cancel</span><span class="go">Install</span></div>`},
+  {k:"Play Protect",t:"Play Protect kuch bole toh",p:"Play Store ke bahar ke apps ko Play Protect abhi pehchaanta nahi. More details dabao, phir Install anyway.",
+   d:`<div class="t">Unsafe app blocked</div><div>Play Protect doesn't recognise this app's developer.</div><div class="acts"><span>More details</span><span class="go">Install anyway</span></div>`,
+   h:"Kaun Dega Play Store pe aate hi yeh warning chali jaayegi."},
+  {k:"Ho gaya",t:"Kholo aur sign in karo",p:"Open dabao, Google se sign in karo, aur pehla group banao. Ab Chrome ke liye Install unknown apps wapas off kar sakte ho.",
+   d:`<div class="t">App installed</div><div>Kaun Dega? is ready.</div><div class="acts"><span>Done</span><span class="go">Open</span></div>`}
+];
+const tl=document.getElementById('steps'),st=document.getElementById('stage');
+let cur=0;
+function show(i){
+  cur=i;
+  [...tl.children].forEach((b,j)=>{b.setAttribute('aria-selected',j===i);b.tabIndex=j===i?0:-1});
+  const s=steps[i];
+  st.innerHTML=`<div class="mini"><div class="scr"><div class="dlg">${s.d}</div></div></div>
+  <div class="copy"><p class="eyebrow">Step ${i+1} / ${steps.length}</p><h3 style="margin-top:6px">${s.t}</h3><p>${s.p}</p>${s.h?`<p class="hint">${s.h}</p>`:''}
+  <div class="nav2"><button class="btn ghost" type="button" ${i===0?'disabled style="opacity:.4;cursor:default"':''} data-go="${i-1}">Peeche</button><button class="btn primary" type="button" ${i===steps.length-1?'disabled style="opacity:.4;cursor:default"':''} data-go="${i+1}">Agla step</button></div></div>`;
+}
+steps.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.role='tab';b.id='tab'+i;b.innerHTML=`<span class="k">${i+1}</span><span>${s.k}</span>`;b.onclick=()=>show(i);tl.appendChild(b)});
+tl.addEventListener('keydown',e=>{if(e.key==='ArrowDown'||e.key==='ArrowRight'){e.preventDefault();show(Math.min(cur+1,steps.length-1));tl.children[cur].focus()}if(e.key==='ArrowUp'||e.key==='ArrowLeft'){e.preventDefault();show(Math.max(cur-1,0));tl.children[cur].focus()}});
+st.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g&&!g.disabled)show(+g.dataset.go)});
+show(0);
+
+/* hero excuse ticker */
+const EXC=['"Kal pakka de dunga"','"Bhai UPI down hai"','"Wallet room pe bhool gaya"','"Salary aane de"','"Maine toh kam khaya tha"','"Next time meri treat"'];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let ei=0;const ex=document.getElementById('excuse'),nh=document.getElementById('nahi');
+if(!reduce)setInterval(()=>{ei=(ei+1)%EXC.length;ex.textContent=EXC[ei];ex.classList.remove('cut');nh.style.animation='none';void ex.offsetWidth;ex.classList.add('cut');nh.style.animation=''},3400);
+
+/* marquee */
+const MQ=['Chai ka hisaab','Rent ka hisaab','Goa trip ka hisaab','Maggi night ka hisaab','Zomato ka hisaab','Wifi ka hisaab','Birthday cake ka hisaab'];
+const once=MQ.map(t=>`<span>${t}</span><span class="dot">●</span>`).join('');
+document.getElementById('mq').innerHTML=once+once;
+
+/* excuse generator */
+const GEN=[
+  ['"Bhai UPI ka server down hai."','Rohan, 11:47 pm','Server theek hai. Ye raha link, ₹340 bhej de.'],
+  ['"Maine toh sirf ek slice khaya tha."','Neha, pizza night','Shares mein split kar diya. Tera ₹96 banta hai.'],
+  ['"Salary aane de, pakka."','Kabir, 3rd of the month','Reminder 1st ko aayega. Pyaar se.'],
+  ['"Tu hi de de, baad mein dekh lenge."','Dev, Goa trip','Dekh liya. Dev ke ₹1,200 baaki hain.'],
+  ['"Cash diya tha na, yaad nahi?"','Aarav, canteen','Cash bhi record hota hai. Yahan toh nahi dikha.'],
+  ['"Group mein mat daal, sab dekhenge."','Rohan, Flat 302','Sabko dikhega tabhi toh hisaab saaf rahega.']
+];
+let gi=0;document.getElementById('genbtn').onclick=()=>{gi=(gi+1)%GEN.length;const [q,w,r]=GEN[gi];
+  document.getElementById('gq').textContent=q;document.getElementById('gw').textContent=w;document.getElementById('gr').textContent=r};
+
+const toast=document.getElementById('toast');let tt;
+function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),3200)}
+document.getElementById('copyhash').onclick=async()=>{
+  const t=document.getElementById('hash').textContent;
+  try{await navigator.clipboard.writeText(t);say('Fingerprint copy ho gaya.')}
+  catch(_){const r=document.createRange();r.selectNodeContents(document.getElementById('hash'));const s=getSelection();s.removeAllRanges();s.addRange(r);say('Fingerprint select ho gaya. Keyboard se copy kar lo.')}
+};
+
+fetch('version.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(v=>{
+  if(!v||!v.versionCode)return;
+  document.getElementById('meta').textContent=`v${v.versionName} beta · ${v.sizeMb} MB · Android 8+ · iPhone wale thoda ruko`;
+  if(v.sha256){document.getElementById('hash').textContent=v.sha256.match(/.{1,4}/g).join(' ');
+    document.getElementById('hashnote').textContent=`Version ${v.versionName} ki file ka SHA-256.`}
+}).catch(()=>{});
+</script>
+
+</html>
