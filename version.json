@@ -1,8 +1,8 @@
 {
-  "versionCode": 102,
-  "versionName": "0.9.2",
+  "versionCode": 103,
+  "versionName": "0.9.3",
   "apk": "https://github.com/siddharth124creates/kaun-dega-site/releases/latest/download/kaun-dega.apk",
-  "sha256": "c8d7f986ed4b49dffb3efa697ffd42aab9672997594584c09baccb22e2713c25",
+  "sha256": "afb5b5548f58466367343482153f7ce782e75c6a93b7fe80ba8a61ef074b011b",
   "sizeMb": "12.8",
   "notes": ""
 }
