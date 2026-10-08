@@ -85,15 +85,19 @@ nav.links a:hover{color:var(--ink)}
 @keyframes thunk{from{transform:rotate(-12deg) scale(1.8);opacity:0}to{transform:rotate(-12deg) scale(1);opacity:1}}
 .fab{margin-top:auto;align-self:stretch;text-align:center;background:var(--btn);color:var(--btn-ink);border-radius:12px;padding:11px;font-weight:600}
 
-/* promise strip */
 section{padding-block:56px;border-top:1px solid var(--line)}
 section h2{font-size:clamp(26px,3.6vw,36px);font-weight:700;letter-spacing:-.015em}
 .sec-head{display:flex;flex-direction:column;gap:8px;margin-bottom:32px;max-width:60ch}
-.promise{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-@media (max-width:760px){.promise{grid-template-columns:1fr}}
-.promise h3{font-size:20px;font-weight:700;margin-bottom:6px}
-.promise p{color:var(--dim);font-size:15px}
-.promise .tick{width:30px;height:30px;border-radius:50%;background:var(--haldi);color:#141117;display:grid;place-items:center;margin-bottom:14px;font-weight:800}
+
+/* walkthrough */
+.walk{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 24px;padding:0}
+@media (max-width:860px){.walk{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.walk{grid-template-columns:1fr}.walk img{max-width:250px}}
+.walk li{list-style:none;display:flex;flex-direction:column;gap:6px;min-width:0}
+.walk img{width:100%;max-width:300px;aspect-ratio:1/2;height:auto;border:1.5px solid #2A2430;border-radius:22px;background:#141117;margin-bottom:8px}
+.walk .n{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--dim)}
+.walk h3{font-size:17px;font-weight:700}
+.walk p{font-size:14px;color:var(--dim)}
 
 /* how it works */
 .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
@@ -208,6 +212,7 @@ footer .fine{font-size:13px;color:var(--dim);max-width:52ch}
     <a href="#top" aria-label="Kaun Dega? home"><svg class="wm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6294 1127" role="img" aria-label="Kaun Dega?" xmlns:c2pa="http://c2pa.org/manifest"><path fill="currentColor" d="M533 817 312 508V817H116V112H312V416L531 112H757L498 454L770 817Z"/><path fill="currentColor" d="M1039 249Q1097 249 1139.0 272.0Q1181 295 1204 334V256H1400V817H1204V739Q1181 778 1138.5 801.0Q1096 824 1039 824Q972 824 917.5 789.0Q863 754 831.5 688.5Q800 623 800 536Q800 449 831.5 384.0Q863 319 917.5 284.0Q972 249 1039 249ZM1102 420Q1058 420 1029.0 450.5Q1000 481 1000 536Q1000 590 1029.0 621.5Q1058 653 1102 653Q1145 653 1174.5 622.0Q1204 591 1204 536Q1204 482 1174.5 451.0Q1145 420 1102 420Z"/><path fill="currentColor" d="M2076 256V817H1879V737Q1854 775 1810.0 798.5Q1766 822 1709 822Q1611 822 1554.5 757.5Q1498 693 1498 582V256H1693V557Q1693 605 1718.5 632.5Q1744 660 1786 660Q1829 660 1854.0 632.5Q1879 605 1879 557V256Z"/><path fill="currentColor" d="M2756 490V817H2560V516Q2560 468 2535.0 440.5Q2510 413 2468 413Q2424 413 2399.0 440.5Q2374 468 2374 516V817H2178V256H2374V336Q2400 298 2444.0 274.5Q2488 251 2545 251Q2642 251 2699.0 315.5Q2756 380 2756 490Z"/><path fill="currentColor" d="M3682 464Q3682 566 3636.5 646.0Q3591 726 3507.5 771.5Q3424 817 3314 817H3035V112H3314Q3425 112 3508.5 156.5Q3592 201 3637.0 281.0Q3682 361 3682 464ZM3483 464Q3483 377 3434.0 329.5Q3385 282 3299 282H3231V644H3299Q3385 644 3434.0 597.0Q3483 550 3483 464Z"/><path fill="currentColor" d="M4293 576H3922Q3925 622 3947.5 644.5Q3970 667 4005 667Q4054 667 4075 623H4284Q4271 681 4233.5 726.5Q4196 772 4139.0 798.0Q4082 824 4013 824Q3930 824 3865.5 789.0Q3801 754 3764.5 689.0Q3728 624 3728 536Q3728 448 3764.0 383.5Q3800 319 3864.5 284.0Q3929 249 4013 249Q4096 249 4160.0 283.0Q4224 317 4260.0 380.5Q4296 444 4296 530Q4296 553 4293 576ZM4096 481Q4096 445 4072.0 424.5Q4048 404 4012 404Q3976 404 3953.0 423.5Q3930 443 3923 481Z"/><path fill="currentColor" d="M4738 334V256H4934V811Q4934 890 4904.0 953.5Q4874 1017 4810.5 1055.0Q4747 1093 4650 1093Q4520 1093 4442.0 1032.0Q4364 971 4353 866H4546Q4552 893 4576.0 908.0Q4600 923 4638 923Q4738 923 4738 811V739Q4715 778 4672.5 801.0Q4630 824 4573 824Q4506 824 4451.5 789.0Q4397 754 4365.5 688.5Q4334 623 4334 536Q4334 449 4365.5 384.0Q4397 319 4451.5 284.0Q4506 249 4573 249Q4630 249 4672.5 272.0Q4715 295 4738 334ZM4636 420Q4592 420 4563.0 450.5Q4534 481 4534 536Q4534 590 4563.0 621.5Q4592 653 4636 653Q4679 653 4708.5 622.0Q4738 591 4738 536Q4738 482 4708.5 451.0Q4679 420 4636 420Z"/><path fill="currentColor" d="M5243 249Q5301 249 5343.0 272.0Q5385 295 5408 334V256H5604V817H5408V739Q5385 778 5342.5 801.0Q5300 824 5243 824Q5176 824 5121.5 789.0Q5067 754 5035.5 688.5Q5004 623 5004 536Q5004 449 5035.5 384.0Q5067 319 5121.5 284.0Q5176 249 5243 249ZM5306 420Q5262 420 5233.0 450.5Q5204 481 5204 536Q5204 590 5233.0 621.5Q5262 653 5306 653Q5349 653 5378.5 622.0Q5408 591 5408 536Q5408 482 5378.5 451.0Q5349 420 5306 420Z"/><path fill="#ffc629" d="M6217 310Q6217 401 6156.5 454.0Q6096 507 5997 509L5992 582H5819L5813 383H5885Q5953 383 5989.0 367.5Q6025 352 6025 312Q6025 285 6010.5 269.5Q5996 254 5971 254Q5943 254 5928.5 270.5Q5914 287 5914 315H5729Q5727 254 5754.5 203.5Q5782 153 5838.0 123.5Q5894 94 5976 94Q6085 94 6151.0 150.0Q6217 206 6217 310Z"/><path fill="currentColor" d="M6161 276Q6161 367 6100.5 420.0Q6040 473 5941 475L5936 548H5763L5757 349H5829Q5897 349 5933.0 333.5Q5969 318 5969 278Q5969 251 5954.5 235.5Q5940 220 5915 220Q5887 220 5872.5 236.5Q5858 253 5858 281H5673Q5671 220 5698.5 169.5Q5726 119 5782.0 89.5Q5838 60 5920 60Q6029 60 6095.0 116.0Q6161 172 6161 276Z"/><circle cx="5850.5" cy="723.5" r="112" fill="#ffc629" stroke="currentColor" stroke-width="30"/><circle cx="5850.5" cy="723.5" r="58.24" fill="none" stroke="currentColor" stroke-width="14" opacity=".9"/></svg></a>
     <nav class="links" aria-label="Sections">
       <a href="#how">Kaise chalta hai</a>
+      <a href="#walkthrough">Walkthrough</a>
       <a href="#features">Features</a>
       <a href="#install">Install help</a>
       <a href="#safety">Safe hai?</a>
@@ -260,17 +265,6 @@ footer .fine{font-size:13px;color:var(--dim);max-width:52ch}
 
     <div class="marquee" aria-hidden="true"><div id="mq"></div></div>
 
-    <section aria-labelledby="free-h">
-      <div class="sec-head">
-        <p class="eyebrow">Hamara vaada</p>
-        <h2 id="free-h">Free. Hamesha. Koi chakkar nahi.</h2>
-      </div>
-      <div class="promise">
-        <div><div class="tick">✓</div><h3>Koi limit nahi</h3><p>Jitne groups, dost aur kharche chahiye, banao. Splitting ke liye kabhi paisa nahi maangenge.</p></div>
-        <div><div class="tick">✓</div><h3>Kharchon mein ads nahi</h3><p>Tumhare groups, kharche aur settle-up ekdum clean. Hisaab ke beech mein koi ad nahi ghusega.</p></div>
-        <div><div class="tick">✓</div><h3>Data bechna? Bilkul nahi</h3><p>Tumne kahan kitna udaya, wo tumhara personal matter hai. Hum kisi ko nahi bechte.</p></div>
-      </div>
-    </section>
 
     <section id="how" aria-labelledby="how-h">
       <div class="sec-head">
@@ -284,6 +278,25 @@ footer .fine{font-size:13px;color:var(--dim);max-width:52ch}
       </ol>
     </section>
 
+
+    <section id="walkthrough" aria-labelledby="walk-h">
+      <div class="sec-head">
+        <p class="eyebrow">Poora walkthrough</p>
+        <h2 id="walk-h">Shuru se chukta tak, 9 chhote clips mein</h2>
+        <p class="dim">Group banane se lekar paisa wapas aane tak, har step aise dikhta hai.</p>
+      </div>
+      <ol class="walk">
+        <li><img src="walkthrough/group.gif" width="320" height="640" loading="lazy" alt="Group banao: Home pe + Naya group, naam likho, type chuno, Banao."><span class="n">01</span><h3>Group banao</h3><p>Home pe <b>+ Naya group</b>, naam likho, type chuno, Banao.</p></li>
+        <li><img src="walkthrough/dost.gif" width="320" height="640" loading="lazy" alt="Dost add karo: Group mein + Dost. Naam likho, + dabao, agla naam. App na ho toh bhi chalega."><span class="n">02</span><h3>Dost add karo</h3><p>Group mein <b>+ Dost</b>. Naam likho, + dabao, agla naam. App na ho toh bhi chalega.</p></li>
+        <li><img src="walkthrough/invite.gif" width="320" height="640" loading="lazy" alt="Invite link bhejo: Invite link dabao aur WhatsApp pe group mein bhej do."><span class="n">03</span><h3>Invite link bhejo</h3><p><b>Invite link</b> dabao aur WhatsApp pe group mein bhej do.</p></li>
+        <li><img src="walkthrough/join.gif" width="320" height="640" loading="lazy" alt="Link se join: Dost link kholta hai, Inme se tu kaun hai? mein apna naam chunta hai, Join."><span class="n">04</span><h3>Link se join</h3><p>Dost link kholta hai, <b>Inme se tu kaun hai?</b> mein apna naam chunta hai, Join.</p></li>
+        <li><img src="walkthrough/noapp.gif" width="320" height="640" loading="lazy" alt="App nahi hai?: Link se APK download karo, install karo, phir Settings &gt; Invite code mein code daalo."><span class="n">05</span><h3>App nahi hai?</h3><p>Link se APK download karo, install karo, phir <b>Settings &gt; Invite code</b> mein code daalo.</p></li>
+        <li><img src="walkthrough/kharcha.gif" width="320" height="640" loading="lazy" alt="Kharcha daalo: Kharcha dabao, amount aur cheez likho, kisne diya aur kaise baantna hai chuno."><span class="n">06</span><h3>Kharcha daalo</h3><p><b>Kharcha</b> dabao, amount aur cheez likho, kisne diya aur kaise baantna hai chuno.</p></li>
+        <li><img src="walkthrough/react.gif" width="320" height="640" loading="lazy" alt="React aur baat-cheet: Kharche pe tap karo. 😂🔥🙏😤💀 lagao ya neeche comment karo."><span class="n">07</span><h3>React aur baat-cheet</h3><p>Kharche pe tap karo. 😂🔥🙏😤💀 lagao ya neeche comment karo.</p></li>
+        <li><img src="walkthrough/nudge.gif" width="320" height="640" loading="lazy" alt="Nudge bhejo: Nudge, dost chuno, tone chuno. Uske phone pe notification jaata hai."><span class="n">08</span><h3>Nudge bhejo</h3><p><b>Nudge</b>, dost chuno, tone chuno. Uske phone pe notification jaata hai.</p></li>
+        <li><img src="walkthrough/settle.gif" width="320" height="640" loading="lazy" alt="Settle karo: Settle se UPI khulta hai. Paisa milne pe saamne wala Mil gaya dabata hai."><span class="n">09</span><h3>Settle karo</h3><p><b>Settle</b> se UPI khulta hai. Paisa milne pe saamne wala <b>Mil gaya</b> dabata hai.</p></li>
+      </ol>
+    </section>
 
     <section id="features" aria-labelledby="feat-h">
       <div class="sec-head">
