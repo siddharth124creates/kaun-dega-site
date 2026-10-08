@@ -1,8 +1,8 @@
 {
-  "versionCode": 107,
-  "versionName": "0.10.1",
+  "versionCode": 111,
+  "versionName": "0.11.0",
   "apk": "https://github.com/siddharth124creates/kaun-dega-site/releases/latest/download/kaun-dega.apk",
-  "sha256": "74fac443a78161abf20b5ebcd6b33ad2937d0f5c6a22bcba7453e8fa64502274",
-  "sizeMb": "12.8",
-  "notes": "- Nudges: 3 in a row, then a 1 hour break before the next 3.\n- Badges show how to earn them and your progress; tap one for details.\n- The + button works when adding friends to a group.\n- Settings is cleaner: fewer explanation lines, no versions link.\n- Website no longer links to older versions.\n- Server: needs `supabase/migrations/20261009000000_nudge_sets.sql` run once in Supabase before this version is shared."
+  "sha256": "7c6ca2c5d22d2d8e113038ad535f4565003af1e2f2d973a23e606a56cb043d3d",
+  "sizeMb": "12.9",
+  "notes": "- Avatars: make your own face after login (hair, facial hair, accessories, colours). Its mood follows your balance, and friends see it in their groups. Change it from Profile > Avatar badlo.\n- Sounds for saving a kharcha, Mil gaya, nudges, reactions and new badges. Turn them off with Settings > Awaaz; they stay quiet when the phone is on silent or vibrate.\n- Joining with an invite link: pick your name first, so you no longer show up twice in a group.\n- Invite link now has Code copy karo, to send just the code.\n- Friendlier Hinglish across Home, groups, Add kharcha and Profile; the Debt free badge is now Zero udhaar.\n- Server: needs `supabase/migrations/20261010000000_avatars.sql` run once in Supabase before this version is shared."
 }
