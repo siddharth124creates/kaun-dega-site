@@ -1,8 +1,8 @@
 {
-  "versionCode": 103,
-  "versionName": "0.9.3",
+  "versionCode": 105,
+  "versionName": "0.10.0",
   "apk": "https://github.com/siddharth124creates/kaun-dega-site/releases/latest/download/kaun-dega.apk",
-  "sha256": "afb5b5548f58466367343482153f7ce782e75c6a93b7fe80ba8a61ef074b011b",
+  "sha256": "6919639f11d108b941b96be11699cfeff06d8e09248b9b09e8ed15dc55be0e1e",
   "sizeMb": "12.8",
-  "notes": ""
+  "notes": "- Google login is the only way in; sample groups and demo buttons are gone.\n- New bottom bar: Home, Profile and Settings.\n- Home highlights Naya group, and the group list shows who owes what at a glance.\n- Inside a group: Settle, Nudge, Invite link and + Dost up top, Smart hisaab switch, Kharcha ⚡ button.\n- Settings: name, UPI id and phone; Invite code; notification switches, group mute and quiet hours (11pm to 8am); vibration; theme; sign out; delete account.\n- Notifications for new kharche (bundled per group), nudges, payments and friends joining.\n- Monthly wrap removed.\n- Login screen has an animated logo and links to the Terms and Privacy policy.\n- Server: needs `supabase/migrations/20261008000000_phone_and_account.sql` run once in Supabase before this version is shared."
 }
