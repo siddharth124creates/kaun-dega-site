@@ -132,13 +132,12 @@ section h2{font-size:clamp(26px,3.6vw,36px);font-weight:700;letter-spacing:-.015
 .nav2 .btn{padding:10px 16px;font-size:14px;border-radius:10px}
 
 /* safety */
-.safe{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.safe{display:grid;grid-template-columns:1fr;gap:40px;max-width:640px}
 @media (max-width:760px){.safe{grid-template-columns:1fr}}
 .safe h3{font-size:18px;font-weight:700;margin-bottom:10px}
 .perm{list-style:none;padding:0;margin:0}
 .perm li{display:flex;justify-content:space-between;gap:12px;padding-block:10px;border-bottom:1px solid var(--line);font-size:15px}
 .perm li span:last-child{color:var(--dim);text-align:right}
-.hash{font-family:var(--mono);font-size:12.5px;background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:14px;overflow-wrap:anywhere;margin-top:10px}
 .copybtn{margin-top:10px;font:inherit;font-size:13px;font-weight:600;background:none;border:1.5px solid var(--line);color:var(--ink);border-radius:10px;padding:7px 12px;cursor:pointer}
 
 /* faq */
@@ -234,7 +233,6 @@ footer .fine{font-size:13px;color:var(--dim);max-width:52ch}
             Android pe download karo
           </a>
           <a class="btn ghost" href="#install">Install kaise karein?</a>
-          <a class="btn ghost" href="https://claude.ai/artifact/KiC5yqXYR93ATwsCGpn7Jr" target="_blank" rel="noopener">App try karo ↗</a>
         </div>
         <p class="meta" id="meta">Android 8+ · iPhone wale thoda ruko</p>
       </div>
@@ -296,18 +294,14 @@ footer .fine{font-size:13px;color:var(--dim);max-width:52ch}
         <div class="feat"><h3>Google se login</h3><p>Na password, na OTP. Ek tap aur andar.</p><div class="demo"><span>G  Continue with Google</span></div></div>
         <div class="feat"><h3>Ek saath sabko add karo</h3><p>Naam likho, +, agla naam. Poora flat ek baar mein.</p><div class="demo"><span>Rohan +</span><span>Neha +</span><span>Kabir +</span></div></div>
         <div class="feat"><h3>Payment confirm</h3><p>Jab tak saamne wala "Mil gaya" na bole, hisaab nahi badlega.</p><div class="demo"><span>₹340 · Mil gaya?</span></div></div>
-        <div class="feat"><h3>Reminder ab notification</h3><p>Sweet, Seedha ya Savage. Din mein ek. App pe nahi hai toh WhatsApp.</p><div class="demo"><span>Sweet</span><span>Seedha</span><span>Savage</span></div></div>
+        <div class="feat"><h3>Reminder ab notification</h3><p>Sweet, Seedha ya Savage. Ek saath 3, phir ghante bhar ka break. App pe nahi hai toh WhatsApp.</p><div class="demo"><span>Sweet</span><span>Seedha</span><span>Savage</span></div></div>
         <div class="feat"><h3>Trip live total</h3><p>Trip pe kitna uda, live dikhta rehta hai.</p><div class="demo"><span>Goa: ₹9,600 ab tak</span><span>₹1,920/head</span></div></div>
-        <div class="feat hot wide"><h3>Monthly wrap</h3><p>Kitna uda, kis pe uda, kaun late tha. Share karne layak.</p><div class="demo"><span>Oct wrap · 🍕 #1 Zomato</span></div></div>
+        <div class="feat wide"><h3>Monthly wrap</h3><p>Mahine ka poora hisaab, share karne layak.</p><div class="demo"><span>Jald aa raha hai</span></div></div>
         <div class="feat"><h3>Reactions aur comments</h3><p>Har kharche pe react karo ya roast karo.</p><div class="demo"><span>😂</span><span>🔥</span><span>💀</span><span>"phir se pizza?"</span></div></div>
         <div class="feat"><h3>Har mahine wala kharcha</h3><p>Rent, WiFi, maid didi. Apne aap add ho jaata hai.</p><div class="demo"><span>Rent · har 1 tareekh</span></div></div>
-        <div class="feat"><h3>Badges aur streak</h3><p>Pehla kharcha, Jaldi chukta, Debt free. Opt-in "Kanjoos of the month" bhi.</p><div class="demo"><span>🏅 Jaldi chukta</span><span>🔥 5 din</span></div></div>
+        <div class="feat"><h3>Badges aur streak</h3><p>Pehla kharcha, Jaldi chukta, Debt free. Har badge pe likha hai kaise milega.</p><div class="demo"><span>🏅 Jaldi chukta</span><span>🔥 5 din</span></div></div>
         <div class="feat wide"><h3>Smart tips</h3><p>Sahi time pe sahi nudge.</p><div class="demo"><span>"Mahine ka end, rent se pehle settle karo"</span></div></div>
         </div>
-      <div class="feats-end">
-        <a class="btn primary" href="https://claude.ai/artifact/KiC5yqXYR93ATwsCGpn7Jr" target="_blank" rel="noopener">App ka demo try karo ↗</a>
-        <span class="dim" style="font-size:14px">Sample data hai, koi paisa nahi jaata.</span>
-      </div>
     </section>
     <section aria-labelledby="gen-h">
       <div class="sec-head">
@@ -351,13 +345,6 @@ footer .fine{font-size:13px;color:var(--dim);max-width:52ch}
             <li><span>Tumhara paisa</span><span>Kabhi nahi. Payment tumhare apne UPI app mein hota hai</span></li>
             <li><span>Contacts, SMS, photos</span><span>Maangte hi nahi</span></li>
           </ul>
-        </div>
-        <div>
-          <h3>File asli hai ya nahi, check karo</h3>
-          <p class="dim" style="font-size:15px">Har release ka SHA-256 fingerprint yahan milega. Download ki hui file se match ho gaya, matlab kisi ne gadbad nahi ki.</p>
-          <div class="hash" id="hash">…</div>
-          <button class="copybtn" type="button" id="copyhash">Fingerprint copy karo</button>
-          <p class="dim" style="font-size:12px;margin-top:8px" id="hashnote">Pehla release aate hi yahan dikhega.</p>
         </div>
       </div>
     </section>
@@ -446,17 +433,10 @@ let gi=0;document.getElementById('genbtn').onclick=()=>{gi=(gi+1)%GEN.length;con
 
 const toast=document.getElementById('toast');let tt;
 function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),3200)}
-document.getElementById('copyhash').onclick=async()=>{
-  const t=document.getElementById('hash').textContent;
-  try{await navigator.clipboard.writeText(t);say('Fingerprint copy ho gaya.')}
-  catch(_){const r=document.createRange();r.selectNodeContents(document.getElementById('hash'));const s=getSelection();s.removeAllRanges();s.addRange(r);say('Fingerprint select ho gaya. Keyboard se copy kar lo.')}
-};
 
 fetch('version.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(v=>{
   if(!v||!v.versionCode)return;
   document.getElementById('meta').textContent=`v${v.versionName} beta · ${v.sizeMb} MB · Android 8+ · iPhone wale thoda ruko`;
-  if(v.sha256){document.getElementById('hash').textContent=v.sha256.match(/.{1,4}/g).join(' ');
-    document.getElementById('hashnote').textContent=`Version ${v.versionName} ki file ka SHA-256.`}
 }).catch(()=>{});
 </script>
 
