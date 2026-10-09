@@ -1,8 +1,8 @@
 {
-  "versionCode": 111,
-  "versionName": "0.11.0",
-  "apk": "https://github.com/siddharth124creates/kaun-dega-site/releases/latest/download/kaun-dega.apk",
-  "sha256": "7c6ca2c5d22d2d8e113038ad535f4565003af1e2f2d973a23e606a56cb043d3d",
-  "sizeMb": "12.9",
-  "notes": "- Avatars: make your own face after login (hair, facial hair, accessories, colours). Its mood follows your balance, and friends see it in their groups. Change it from Profile > Avatar badlo.\n- Sounds for saving a kharcha, Mil gaya, nudges, reactions and new badges. Turn them off with Settings > Awaaz; they stay quiet when the phone is on silent or vibrate.\n- Joining with an invite link: pick your name first, so you no longer show up twice in a group.\n- Invite link now has Code copy karo, to send just the code.\n- Friendlier Hinglish across Home, groups, Add kharcha and Profile; the Debt free badge is now Zero udhaar.\n- Server: needs `supabase/migrations/20261010000000_avatars.sql` run once in Supabase before this version is shared."
+  "versionCode": 114,
+  "versionName": "0.12.0",
+  "apk": "https://github.com/siddharth124creates/kaun-dega-site/releases/download/v0.12.0/kaun-dega.apk",
+  "sha256": "bfc08561ebfbded20b3f4a4e80c1d20b5dc7726906e072b1b84586bc46cf86f8",
+  "sizeMb": "34.6",
+  "notes": "- Group screen: Settle, Nudge and Kaun kisko dega in one row. Kaun kisko dega shows who pays whom; the invite link moved into the ⋯ menu.\n- Edit a kharcha after saving it, and Undo right after deleting one.\n- React and comment buttons now show under every kharcha.\n- Capital letters work in names, titles and comments.\n- Rename friends added by name, and the group admin can remove someone once their hisaab is zero or make a new invite link.\n- One-tap update: the app downloads the new version and opens the installer.\n- A short 3-step tour for new users (see it again from Settings > App kaise chalta hai). Invite code box on Home.\n- Safer: emails are hidden from group members, nudges are private, unsent kharche survive a busy server, and the app is now signed with a private key.\n- Needs Android 9 or newer. Android 8 phones stay on 0.11.0.\n- Only the person who added or paid a kharcha, or the group admin, can edit or delete it.\n- Server: needs `supabase/migrations/20261011000000_v012_safety_and_editing.sql` and then `supabase/migrations/20261012000000_v012_security_fixes.sql` run once in Supabase before this version is shared."
 }
