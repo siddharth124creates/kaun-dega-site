@@ -239,7 +239,7 @@ footer .fine{font-size:13px;color:var(--dim);max-width:52ch}
           </a>
           <a class="btn ghost" href="#install">Install kaise karein?</a>
         </div>
-        <p class="meta" id="meta">Android 8+ · iPhone wale thoda ruko</p>
+        <p class="meta" id="meta">Android 9+ · iPhone wale thoda ruko</p>
       </div>
 
       <div class="phone" aria-label="Kaun Dega home screen preview">
@@ -449,7 +449,7 @@ function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);t
 
 fetch('version.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(v=>{
   if(!v||!v.versionCode)return;
-  document.getElementById('meta').textContent=`v${v.versionName} beta · ${v.sizeMb} MB · Android 8+ · iPhone wale thoda ruko`;
+  document.getElementById('meta').textContent=`v${v.versionName} beta · ${v.sizeMb} MB · Android 9+ · iPhone wale thoda ruko`;
 }).catch(()=>{});
 </script>
 
